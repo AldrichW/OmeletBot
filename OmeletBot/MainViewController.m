@@ -9,18 +9,25 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
-@property (strong) IBOutlet NSButton *topLeftButton;
-@property (strong) IBOutlet NSButton *topMiddleButton;
-@property (strong) IBOutlet NSButton *topRightButton;
-@property (strong) IBOutlet NSButton *bottomLeftButton;
-@property (strong) IBOutlet NSButton *bottomMiddleButton;
-@property (strong) IBOutlet NSButton *bottomRightButton;
 @property (strong) IBOutlet NSPopUpButton *topLeftPopupButton;
 @property (strong) IBOutlet NSPopUpButton *topMiddlePopupButton;
 @property (strong) IBOutlet NSPopUpButton *topRightPopupButton;
 @property (strong) IBOutlet NSPopUpButton *bottomLeftPopupButton;
 @property (strong) IBOutlet NSPopUpButton *bottomMiddlePopupButton;
 @property (strong) IBOutlet NSPopUpButton *bottomRightPopupButton;
+@property (strong) IBOutlet NSButton *topLeftEggButton;
+@property (strong) IBOutlet NSButton *topMiddleEggButton;
+@property (strong) IBOutlet NSButton *topRightEggButton;
+@property (strong) IBOutlet NSButton *bottomLeftEggButton;
+@property (strong) IBOutlet NSButton *bottomMiddleEggButton;
+@property (strong) IBOutlet NSButton *bottomRightEggButton;
+@property (strong) IBOutlet NSImageView *topLeftScrambledImage;
+@property (strong) IBOutlet NSImageView *topMiddleScrambledImage;
+@property (strong) IBOutlet NSImageView *topRightScrambledImage;
+@property (strong) IBOutlet NSImageView *bottomLeftScrambledImage;
+@property (strong) IBOutlet NSImageView *bottomMiddleScrambledImage;
+
+@property (strong) IBOutlet NSImageView *bottomRightScrambledImage;
 
 @end
 
@@ -29,19 +36,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    
+
     [self hideAllPopupButtons];
+    [self hideAllScrambledImages];
 
 }
 
--(void)populatePopupButton:(NSPopUpButton *)popupButton withItems:(NSArray *)items{
+
+- (void)populatePopupButton:(NSPopUpButton *)popupButton withItems:(NSArray *)items{
     
     if (popupButton != nil){
         [popupButton addItemsWithTitles:items];
     }
 }
 
--(void)hideAllPopupButtons{
+- (void)hideAllPopupButtons{
     dispatch_async(dispatch_get_main_queue(), ^{
         [_topLeftPopupButton setHidden:YES];
         [_topMiddlePopupButton setHidden:YES];
@@ -49,6 +58,17 @@
         [_bottomLeftPopupButton setHidden:YES];
         [_bottomMiddlePopupButton setHidden:YES];
         [_bottomRightPopupButton setHidden:YES];
+    });
+}
+
+- (void)hideAllScrambledImages{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_topLeftScrambledImage setHidden:YES];
+        [_topMiddleScrambledImage setHidden:YES];
+        [_topRightScrambledImage setHidden:YES];
+        [_bottomLeftScrambledImage setHidden:YES];
+        [_bottomMiddleScrambledImage setHidden:YES];
+        [_bottomRightScrambledImage setHidden:YES];
     });
 }
 //Create a new order and add it to the queue.
@@ -62,7 +82,8 @@
 //    //Commenting out any queue related functions.
 //    [_orders enqueue:newOrder];
 //    [self printQueue];
-    [newOrder sendOrder];
+    BOOL success = [newOrder sendOrder];
+    
 }
 
 - (void)pollOmeletBot{
@@ -80,46 +101,54 @@
     
     NSButton *senderButton = (NSButton *)sender;
     //Show popup menu with options.
-    NSLog(@"Button clicked for %@", senderButton.title);
+    NSLog(@"Button clicked for %ld", (long)senderButton.tag);
     
     NSLog(@"Pressing this should show our popup of toppings to choose from");
     
-    GrillPosition position = [self grillPositionFromString:senderButton.title];
+    GrillPosition position = (GrillPosition)senderButton.tag;
+    
     NSArray *options = [NSArray arrayWithObjects:@"Plain",
                                                  @"Dispenser1",
                                                  @"Dispenser2",
                                                  @"All Toppings",
                         nil];
     
+    [senderButton setHidden:YES];
+    
     _candidateCommand = [[OmeletOrder alloc]initWithGrillPosition:position];
     
     switch(position){
         case TOP_LEFT:
             [_topLeftPopupButton setHidden:NO];
+            [_topLeftScrambledImage setHidden:NO];
             [self populatePopupButton:_topLeftPopupButton withItems:options];
             break;
         case TOP_MIDDLE:
             [_topMiddlePopupButton setHidden:NO];
+            [_topMiddleScrambledImage setHidden:NO];
             [self populatePopupButton:_topMiddlePopupButton withItems:options];
             break;
             
         case TOP_RIGHT:
             [_topRightPopupButton setHidden:NO];
+            [_topRightScrambledImage setHidden:NO];
             [self populatePopupButton:_topRightPopupButton withItems:options];
             break;
         case BOTTOM_LEFT:
             [_bottomLeftPopupButton setHidden:NO];
+            [_bottomLeftScrambledImage setHidden:NO];
             [self populatePopupButton:_bottomLeftPopupButton withItems:options];
             break;
         case BOTTOM_MIDDLE:
             [_bottomMiddlePopupButton setHidden:NO];
+            [_bottomMiddleScrambledImage setHidden:NO];
             [self populatePopupButton:_bottomMiddlePopupButton withItems:options];
             break;
         case BOTTOM_RIGHT:
             [_bottomRightPopupButton setHidden:NO];
+            [_bottomRightScrambledImage setHidden:NO];
             [self populatePopupButton:_bottomRightPopupButton withItems:options];
             break;
-            
     };
     
 }
@@ -211,7 +240,7 @@
     NSString *topping = [[popupButton selectedItem]title];
     NSLog(@"The topping  chosen is %@",topping);
     [self createOrderWithGrillPosition:_candidateCommand.grillPosition toppingOption:[self toppingOptionFromString:topping]];
-    [self hideAllPopupButtons];
+    [popupButton setHidden:YES];
     
 }
 
