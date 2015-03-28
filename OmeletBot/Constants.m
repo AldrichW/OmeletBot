@@ -25,3 +25,6 @@ NSString *const BOTH_STRING = @"All Toppings";
 //TODO: Need to configure this!
 NSString *const HOSTNAME = @"http://localhost";
 NSString *const PORT = @"9090";
+
+//TODO: Still need to configure this!
+NSString *const GRILL_LOCATION_STATE_KEY = @"location_state_key";

@@ -289,6 +289,44 @@
 
 - (void)pollOmeletBot{
     //Check if Omelet bot has a free channel.
+    
+    //send a ping request to see if any of the values change.
+    [self sendPing];
+}
+
+- (BOOL)sendPing{
+    NSMutableURLRequest *request;
+    [request setHTTPMethod:@"GET"];
+    
+    NSHTTPURLResponse *response = nil;
+    NSError *error = nil;
+    
+    
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    if(error != nil){
+        NSLog(@"Failed to ping web server. %@", error);
+        return NO;
+    }
+    else{
+        if ([response statusCode] == 200){
+            NSError *error = nil;
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            
+            //Uh oh, error converting the json string into a dictionary.
+            if(error != nil){
+                NSLog(@"Error, could not convert JSON to NSDictionary object. %@", error);
+                
+                return NO;
+            }
+            
+            [dictionary objectForKey:GRILL_LOCATION_STATE_KEY];
+            
+            return YES;
+            
+        }
+    }
+    return NO;
 }
 
 - (void)printQueue{
