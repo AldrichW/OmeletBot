@@ -9,25 +9,37 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
+//Topping Popup Buttons
 @property (strong) IBOutlet NSPopUpButton *topLeftPopupButton;
 @property (strong) IBOutlet NSPopUpButton *topMiddlePopupButton;
 @property (strong) IBOutlet NSPopUpButton *topRightPopupButton;
 @property (strong) IBOutlet NSPopUpButton *bottomLeftPopupButton;
 @property (strong) IBOutlet NSPopUpButton *bottomMiddlePopupButton;
 @property (strong) IBOutlet NSPopUpButton *bottomRightPopupButton;
+
+//Egg Buttons
 @property (strong) IBOutlet NSButton *topLeftEggButton;
 @property (strong) IBOutlet NSButton *topMiddleEggButton;
 @property (strong) IBOutlet NSButton *topRightEggButton;
 @property (strong) IBOutlet NSButton *bottomLeftEggButton;
 @property (strong) IBOutlet NSButton *bottomMiddleEggButton;
 @property (strong) IBOutlet NSButton *bottomRightEggButton;
+
+//Scrambled Eggs
 @property (strong) IBOutlet NSImageView *topLeftScrambledImage;
 @property (strong) IBOutlet NSImageView *topMiddleScrambledImage;
 @property (strong) IBOutlet NSImageView *topRightScrambledImage;
 @property (strong) IBOutlet NSImageView *bottomLeftScrambledImage;
 @property (strong) IBOutlet NSImageView *bottomMiddleScrambledImage;
-
 @property (strong) IBOutlet NSImageView *bottomRightScrambledImage;
+
+//Status Labels.
+@property (strong) IBOutlet NSTextField *topLeftStatus;
+@property (strong) IBOutlet NSTextField *topMiddleStatus;
+@property (strong) IBOutlet NSTextField *topRightStatus;
+@property (strong) IBOutlet NSTextField *bottomLeftStatus;
+@property (strong) IBOutlet NSTextField *bottomMiddleStatus;
+@property (strong) IBOutlet NSTextField *bottomRightStatus;
 
 @end
 
@@ -36,9 +48,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-
-    [self hideAllPopupButtons];
-    [self hideAllScrambledImages];
+    NSArray *options = [NSArray arrayWithObjects:PLAIN_STRING,
+                        DISPENSER_1_STRING,
+                        DISPENSER_2_STRING,
+                        BOTH_STRING,
+                        nil];
+    [self populatePopupButton:_topLeftPopupButton withItems:options];
+    [self populatePopupButton:_topMiddlePopupButton withItems:options];
+    [self populatePopupButton:_topRightPopupButton withItems:options];
+    [self populatePopupButton:_bottomLeftPopupButton withItems:options];
+    [self populatePopupButton:_bottomMiddlePopupButton withItems:options];
+    [self populatePopupButton:_bottomRightPopupButton withItems:options];
+    //Set every position to ready mode
+    [self setToReadyStateAtPosition:TOP_LEFT];
+    [self setToReadyStateAtPosition:TOP_MIDDLE];
+    [self setToReadyStateAtPosition:TOP_RIGHT];
+    [self setToReadyStateAtPosition:BOTTOM_LEFT];
+    [self setToReadyStateAtPosition:BOTTOM_MIDDLE];
+    [self setToReadyStateAtPosition:BOTTOM_RIGHT];
 
 }
 
@@ -50,6 +77,7 @@
     }
 }
 
+//This is for initialization and just my own sanity
 - (void)hideAllPopupButtons{
     dispatch_async(dispatch_get_main_queue(), ^{
         [_topLeftPopupButton setHidden:YES];
@@ -71,6 +99,180 @@
         [_bottomRightScrambledImage setHidden:YES];
     });
 }
+
+//READY State
+-(void)setToReadyStateAtPosition:(GrillPosition) position{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch(position){
+            case TOP_LEFT:
+                [_topLeftEggButton setHidden:NO];
+                [_topLeftPopupButton setHidden:YES];
+                [_topLeftScrambledImage setHidden:YES];
+                [_topLeftStatus setStringValue:@"READY"];
+                break;
+            case TOP_MIDDLE:
+                [_topMiddleEggButton setHidden:NO];
+                [_topMiddlePopupButton setHidden:YES];
+                [_topMiddleScrambledImage setHidden:YES];
+                [_topMiddleStatus setStringValue:@"READY"];
+                break;
+            case TOP_RIGHT:
+                [_topRightEggButton setHidden:NO];
+                [_topRightPopupButton setHidden:YES];
+                [_topRightScrambledImage setHidden:YES];
+                [_topRightStatus setStringValue:@"READY"];
+                break;
+            case BOTTOM_LEFT:
+                [_bottomLeftEggButton setHidden:NO];
+                [_bottomLeftPopupButton setHidden:YES];
+                [_bottomLeftScrambledImage setHidden:YES];
+                [_bottomLeftStatus setStringValue:@"READY"];
+                break;
+            case BOTTOM_MIDDLE:
+                [_bottomMiddleEggButton setHidden:NO];
+                [_bottomMiddlePopupButton setHidden:YES];
+                [_bottomMiddleScrambledImage setHidden:YES];
+                [_bottomMiddleStatus setStringValue:@"READY"];
+                break;
+            case BOTTOM_RIGHT:
+                [_bottomRightEggButton setHidden:NO];
+                [_bottomRightPopupButton setHidden:YES];
+                [_bottomRightScrambledImage setHidden:YES];
+                [_bottomRightStatus setStringValue:@"READY"];
+                break;
+        };
+    });
+}
+
+- (void)setToToppingChooserAtPosition:(GrillPosition)position{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch(position){
+            case TOP_LEFT:
+                [_topLeftEggButton setHidden:YES];
+                [_topLeftPopupButton setHidden:NO];
+                [_topLeftScrambledImage setHidden:NO];
+                [_topLeftStatus setStringValue:@"CHOOSE TOPPINGS"];
+                break;
+            case TOP_MIDDLE:
+                [_topMiddleEggButton setHidden:YES];
+                [_topMiddlePopupButton setHidden:NO];
+                [_topMiddleScrambledImage setHidden:NO];
+                [_topMiddleStatus setStringValue:@"CHOOSE TOPPINGS"];
+                break;
+            case TOP_RIGHT:
+                [_topRightEggButton setHidden:YES];
+                [_topRightPopupButton setHidden:NO];
+                [_topRightScrambledImage setHidden:NO];
+                [_topRightStatus setStringValue:@"CHOOSE TOPPINGS"];
+                break;
+            case BOTTOM_LEFT:
+                [_bottomLeftEggButton setHidden:YES];
+                [_bottomLeftPopupButton setHidden:NO];
+                [_bottomLeftScrambledImage setHidden:NO];
+                [_bottomLeftStatus setStringValue:@"CHOOSE TOPPINGS"];
+                break;
+            case BOTTOM_MIDDLE:
+                [_bottomMiddleEggButton setHidden:YES];
+                [_bottomMiddlePopupButton setHidden:NO];
+                [_bottomMiddleScrambledImage setHidden:NO];
+                [_bottomMiddleStatus setStringValue:@"CHOOSE TOPPINGS"];
+                break;
+            case BOTTOM_RIGHT:
+                [_bottomRightEggButton setHidden:YES];
+                [_bottomRightPopupButton setHidden:NO];
+                [_bottomRightScrambledImage setHidden:NO];
+                [_bottomRightStatus setStringValue:@"CHOOSE TOPPINGS"];
+                break;
+        };
+    });
+}
+
+- (void) setToInProgressAtPosition:(GrillPosition)position{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch(position){
+            case TOP_LEFT:
+                [_topLeftEggButton setHidden:YES];
+                [_topLeftPopupButton setHidden:YES];
+                [_topLeftScrambledImage setHidden:NO];
+                [_topLeftStatus setStringValue:@"IN PROGRESS"];
+                break;
+            case TOP_MIDDLE:
+                [_topMiddleEggButton setHidden:YES];
+                [_topMiddlePopupButton setHidden:YES];
+                [_topMiddleScrambledImage setHidden:NO];
+                [_topMiddleStatus setStringValue:@"IN PROGRESS"];
+                break;
+            case TOP_RIGHT:
+                [_topRightEggButton setHidden:YES];
+                [_topRightPopupButton setHidden:YES];
+                [_topRightScrambledImage setHidden:NO];
+                [_topRightStatus setStringValue:@"IN PROGRESS"];
+                break;
+            case BOTTOM_LEFT:
+                [_bottomLeftEggButton setHidden:YES];
+                [_bottomLeftPopupButton setHidden:YES];
+                [_bottomLeftScrambledImage setHidden:NO];
+                [_bottomLeftStatus setStringValue:@"IN PROGRESS"];
+                break;
+            case BOTTOM_MIDDLE:
+                [_bottomMiddleEggButton setHidden:YES];
+                [_bottomMiddlePopupButton setHidden:YES];
+                [_bottomMiddleScrambledImage setHidden:NO];
+                [_bottomMiddleStatus setStringValue:@"IN PROGRESS"];
+                break;
+            case BOTTOM_RIGHT:
+                [_bottomRightEggButton setHidden:YES];
+                [_bottomRightPopupButton setHidden:YES];
+                [_bottomRightScrambledImage setHidden:NO];
+                [_bottomRightStatus setStringValue:@"IN PROGRESS"];
+                break;
+        };
+     });
+}
+
+- (void) setToFoldAtPosition:(GrillPosition)position{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch(position){
+            case TOP_LEFT:
+                [_topLeftEggButton setHidden:YES];
+                [_topLeftPopupButton setHidden:YES];
+                [_topLeftScrambledImage setHidden:NO];
+                [_topLeftStatus setStringValue:@"FOLD!"];
+                break;
+            case TOP_MIDDLE:
+                [_topMiddleEggButton setHidden:YES];
+                [_topMiddlePopupButton setHidden:YES];
+                [_topMiddleScrambledImage setHidden:NO];
+                [_topMiddleStatus setStringValue:@"FOLD!"];
+                break;
+            case TOP_RIGHT:
+                [_topRightEggButton setHidden:YES];
+                [_topRightPopupButton setHidden:YES];
+                [_topRightScrambledImage setHidden:NO];
+                [_topRightStatus setStringValue:@"FOLD!"];
+                break;
+            case BOTTOM_LEFT:
+                [_bottomLeftEggButton setHidden:YES];
+                [_bottomLeftPopupButton setHidden:YES];
+                [_bottomLeftScrambledImage setHidden:NO];
+                [_bottomLeftStatus setStringValue:@"FOLD!"];
+                break;
+            case BOTTOM_MIDDLE:
+                [_bottomMiddleEggButton setHidden:YES];
+                [_bottomMiddlePopupButton setHidden:YES];
+                [_bottomMiddleScrambledImage setHidden:NO];
+                [_bottomMiddleStatus setStringValue:@"FOLD!"];
+                break;
+            case BOTTOM_RIGHT:
+                [_bottomRightEggButton setHidden:YES];
+                [_bottomRightPopupButton setHidden:YES];
+                [_bottomRightScrambledImage setHidden:NO];
+                [_bottomRightStatus setStringValue:@"FOLD!"];
+                break;
+        };
+    });
+}
+
 //Create a new order and add it to the queue.
 - (void)createOrderWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption{
     OmeletOrder *newOrder = [[OmeletOrder alloc]initWithGrillPosition:grillPosition toppingOption:toppingOption];
@@ -83,7 +285,6 @@
 //    [_orders enqueue:newOrder];
 //    [self printQueue];
     BOOL success = [newOrder sendOrder];
-    
 }
 
 - (void)pollOmeletBot{
@@ -107,50 +308,7 @@
     
     GrillPosition position = (GrillPosition)senderButton.tag;
     
-    NSArray *options = [NSArray arrayWithObjects:@"Plain",
-                                                 @"Dispenser1",
-                                                 @"Dispenser2",
-                                                 @"All Toppings",
-                        nil];
-    
-    [senderButton setHidden:YES];
-    
-    _candidateCommand = [[OmeletOrder alloc]initWithGrillPosition:position];
-    
-    switch(position){
-        case TOP_LEFT:
-            [_topLeftPopupButton setHidden:NO];
-            [_topLeftScrambledImage setHidden:NO];
-            [self populatePopupButton:_topLeftPopupButton withItems:options];
-            break;
-        case TOP_MIDDLE:
-            [_topMiddlePopupButton setHidden:NO];
-            [_topMiddleScrambledImage setHidden:NO];
-            [self populatePopupButton:_topMiddlePopupButton withItems:options];
-            break;
-            
-        case TOP_RIGHT:
-            [_topRightPopupButton setHidden:NO];
-            [_topRightScrambledImage setHidden:NO];
-            [self populatePopupButton:_topRightPopupButton withItems:options];
-            break;
-        case BOTTOM_LEFT:
-            [_bottomLeftPopupButton setHidden:NO];
-            [_bottomLeftScrambledImage setHidden:NO];
-            [self populatePopupButton:_bottomLeftPopupButton withItems:options];
-            break;
-        case BOTTOM_MIDDLE:
-            [_bottomMiddlePopupButton setHidden:NO];
-            [_bottomMiddleScrambledImage setHidden:NO];
-            [self populatePopupButton:_bottomMiddlePopupButton withItems:options];
-            break;
-        case BOTTOM_RIGHT:
-            [_bottomRightPopupButton setHidden:NO];
-            [_bottomRightScrambledImage setHidden:NO];
-            [self populatePopupButton:_bottomRightPopupButton withItems:options];
-            break;
-    };
-    
+    [self setToToppingChooserAtPosition:position];
 }
 
 #pragma mark - Grill Position String Conversions
@@ -245,12 +403,10 @@
     [confirmationAlert addButtonWithTitle:@"Cancel"];
     
     [confirmationAlert setMessageText:@"Are You Sure?"];
-    [confirmationAlert setInformativeText:@"Once you design your delicious omelette, it cannot be undone."];
+    [confirmationAlert setInformativeText:@"Once you confirm your delicious omelette, it cannot be undone."];
     if ([confirmationAlert runModal] == NSAlertFirstButtonReturn){
-        [self createOrderWithGrillPosition:_candidateCommand.grillPosition toppingOption:[self toppingOptionFromString:topping]];
-        [popupButton setHidden:YES];
-    }
-    else{
+        [self createOrderWithGrillPosition:(GrillPosition)popupButton.tag toppingOption:[self toppingOptionFromString:topping]];
+        [self setToInProgressAtPosition:(GrillPosition)popupButton.tag];
         
     }
 }

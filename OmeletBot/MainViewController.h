@@ -15,7 +15,6 @@
 
 @property (nonatomic, strong) NSMutableArray *orders;
 @property (nonatomic, strong) OmeletOrder *currentCommand;
-@property (nonatomic, strong) OmeletOrder *candidateCommand;
 
 - (void)createOrderWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption;
 
