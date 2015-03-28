@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
+
 typedef enum{
     PLAIN = 0,
     DISPENSER_1,
@@ -35,6 +37,8 @@ typedef enum{
 - (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption;
 - (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition;
 - (OmeletOrder *)init;
+
+- (BOOL)sendOrder;
 
 
 @end

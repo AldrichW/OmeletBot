@@ -56,13 +56,13 @@
     OmeletOrder *newOrder = [[OmeletOrder alloc]initWithGrillPosition:grillPosition toppingOption:toppingOption];
     
     NSString *grillPositionString = [self stringFromGrillPosition:newOrder.grillPosition];
+    NSString *toppingOptionString = [self stringFromToppingOption:toppingOption];
     
-    NSLog(@"New order created! Grill Position %@ with Topping %u",grillPositionString, toppingOption);
+    NSLog(@"New order created! Grill Position %@ with Topping %@",grillPositionString, toppingOptionString);
 //    //Commenting out any queue related functions.
 //    [_orders enqueue:newOrder];
 //    [self printQueue];
-    
-    [self sendOrder];
+    [newOrder sendOrder];
 }
 
 - (void)pollOmeletBot{
@@ -75,9 +75,7 @@
     }
 }
 
-- (void)sendOrder{
-    //This is where the HTTP request would get sent to poll and send order in.
-}
+
 - (IBAction)grillButtonPressed:(id)sender {
     
     NSButton *senderButton = (NSButton *)sender;
@@ -213,8 +211,6 @@
     NSString *topping = [[popupButton selectedItem]title];
     NSLog(@"The topping  chosen is %@",topping);
     [self createOrderWithGrillPosition:_candidateCommand.grillPosition toppingOption:[self toppingOptionFromString:topping]];
-    
-    [self sendOrder];
     [self hideAllPopupButtons];
     
 }

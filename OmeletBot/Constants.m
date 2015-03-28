@@ -20,4 +20,8 @@ NSString *const DISPENSER_1_STRING =  @"Dispenser1";
 NSString *const DISPENSER_2_STRING = @"Dispenser2";
 NSString *const BOTH_STRING = @"All Toppings";
 
+#pragma mark - HTTP Request arguments
 
+//TODO: Need to configure this!
+NSString *const HOSTNAME = @"http://localhost";
+NSString *const PORT = @"9090";
