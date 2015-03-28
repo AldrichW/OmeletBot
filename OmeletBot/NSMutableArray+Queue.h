@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSMutableArray (Queue)
-- (id) dequeue;
+- (id)front;
+- (void)dequeue;
 - (void)enqueue:(id) obj;
+- (BOOL)empty;
 
 @end

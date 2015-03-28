@@ -31,4 +31,9 @@ typedef enum{
 @property(nonatomic) GrillPosition grillPosition;
 @property(nonatomic) BOOL inProgress;
 
+//When an omelet order is inited, assume in progress.
+- (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption;
+- (OmeletOrder *)init;
+
+
 @end

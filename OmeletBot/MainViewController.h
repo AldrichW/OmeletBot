@@ -7,10 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NSMutableArray+Queue.h"
+#import "OmeletOrder.h"
 
 @interface MainViewController : NSViewController
 
-@property (nonatomic, strong) Queue *orders;
-@property (nonatomic, strong) OmeletOrder currentCommand;
+@property (nonatomic, strong) NSMutableArray *orders;
+@property (nonatomic, strong) OmeletOrder *currentCommand;
+
+- (void)createOrderWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption;
+
+- (void)pollOmeletBot;
+
+
 
 @end

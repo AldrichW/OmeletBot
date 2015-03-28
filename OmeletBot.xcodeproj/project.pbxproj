@@ -16,6 +16,7 @@
 		1056CCDF1AC67BB400205BAF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCDE1AC67BB400205BAF /* MainViewController.m */; };
 		1056CCE21AC67C6300205BAF /* OmeletOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCE11AC67C6300205BAF /* OmeletOrder.m */; };
 		1056CCE51AC6816500205BAF /* NSMutableArray+Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCE41AC6816500205BAF /* NSMutableArray+Queue.m */; };
+		1056CCEB1AC68A8900205BAF /* grill_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCEA1AC68A8900205BAF /* grill_graphic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1056CCE11AC67C6300205BAF /* OmeletOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OmeletOrder.m; sourceTree = "<group>"; };
 		1056CCE31AC6816500205BAF /* NSMutableArray+Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Queue.h"; sourceTree = "<group>"; };
 		1056CCE41AC6816500205BAF /* NSMutableArray+Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Queue.m"; sourceTree = "<group>"; };
+		1056CCEA1AC68A8900205BAF /* grill_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grill_graphic.png; path = Resources/Images/grill_graphic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		1056CCB91AC678BB00205BAF /* OmeletBot */ = {
 			isa = PBXGroup;
 			children = (
+				1056CCE81AC68A4E00205BAF /* Resources */,
 				1056CCE71AC6818D00205BAF /* Model */,
 				1056CCE61AC6816900205BAF /* Categories */,
 				1056CCBC1AC678BB00205BAF /* AppDelegate.h */,
@@ -145,6 +148,22 @@
 				1056CCE11AC67C6300205BAF /* OmeletOrder.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		1056CCE81AC68A4E00205BAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCE91AC68A5C00205BAF /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1056CCE91AC68A5C00205BAF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCEA1AC68A8900205BAF /* grill_graphic.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +248,7 @@
 			files = (
 				1056CCC51AC678BB00205BAF /* Images.xcassets in Resources */,
 				1056CCC81AC678BC00205BAF /* Main.storyboard in Resources */,
+				1056CCEB1AC68A8900205BAF /* grill_graphic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +458,7 @@
 				1056CCD91AC678BC00205BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1056CCDA1AC678BC00205BAF /* Build configuration list for PBXNativeTarget "OmeletBotTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +467,7 @@
 				1056CCDC1AC678BC00205BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
