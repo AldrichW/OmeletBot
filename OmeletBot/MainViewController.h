@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import "NSMutableArray+Queue.h"
 #import "OmeletOrder.h"
+#import "Constants.h"
 
 @interface MainViewController : NSViewController
 
 @property (nonatomic, strong) NSMutableArray *orders;
 @property (nonatomic, strong) OmeletOrder *currentCommand;
+@property (nonatomic, strong) OmeletOrder *candidateCommand;
 
 - (void)createOrderWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption;
 

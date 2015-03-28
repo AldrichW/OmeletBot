@@ -20,7 +20,15 @@
     
     return newOrder;
 }
-- (OmeletOrder *)init{
-    return [[OmeletOrder alloc]init];
+
+- (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition{
+    OmeletOrder *newOrder = [[OmeletOrder alloc]init];
+    newOrder.grillPosition = grillPosition;
+    newOrder.toppingOption = (ToppingOption)-1;
+    //For now assume yes.
+    newOrder.inProgress = YES;
+    
+    return newOrder;
 }
+
 @end

@@ -33,6 +33,7 @@ typedef enum{
 
 //When an omelet order is inited, assume in progress.
 - (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption;
+- (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition;
 - (OmeletOrder *)init;
 
 
