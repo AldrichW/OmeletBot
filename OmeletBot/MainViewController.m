@@ -239,9 +239,20 @@
     NSPopUpButton *popupButton = (NSPopUpButton *)sender;
     NSString *topping = [[popupButton selectedItem]title];
     NSLog(@"The topping  chosen is %@",topping);
-    [self createOrderWithGrillPosition:_candidateCommand.grillPosition toppingOption:[self toppingOptionFromString:topping]];
-    [popupButton setHidden:YES];
+    NSAlert *confirmationAlert = [[NSAlert alloc]init];
     
+    [confirmationAlert addButtonWithTitle:@"Confirm"];
+    [confirmationAlert addButtonWithTitle:@"Cancel"];
+    
+    [confirmationAlert setMessageText:@"Are You Sure?"];
+    [confirmationAlert setInformativeText:@"Once you design your delicious omelette, it cannot be undone."];
+    if ([confirmationAlert runModal] == NSAlertFirstButtonReturn){
+        [self createOrderWithGrillPosition:_candidateCommand.grillPosition toppingOption:[self toppingOptionFromString:topping]];
+        [popupButton setHidden:YES];
+    }
+    else{
+        
+    }
 }
 
 @end
