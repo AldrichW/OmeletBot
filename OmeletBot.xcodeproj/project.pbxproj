@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1056CCBE1AC678BB00205BAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCBD1AC678BB00205BAF /* AppDelegate.m */; };
+		1056CCC01AC678BB00205BAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCBF1AC678BB00205BAF /* main.m */; };
+		1056CCC31AC678BB00205BAF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCC21AC678BB00205BAF /* ViewController.m */; };
+		1056CCC51AC678BB00205BAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCC41AC678BB00205BAF /* Images.xcassets */; };
+		1056CCC81AC678BC00205BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCC61AC678BC00205BAF /* Main.storyboard */; };
+		1056CCD41AC678BC00205BAF /* OmeletBotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCD31AC678BC00205BAF /* OmeletBotTests.m */; };
+		1056CCDF1AC67BB400205BAF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCDE1AC67BB400205BAF /* MainViewController.m */; };
+		1056CCE21AC67C6300205BAF /* OmeletOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCE11AC67C6300205BAF /* OmeletOrder.m */; };
+		1056CCE51AC6816500205BAF /* NSMutableArray+Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCE41AC6816500205BAF /* NSMutableArray+Queue.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1056CCCE1AC678BC00205BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1056CCAF1AC678BB00205BAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1056CCB61AC678BB00205BAF;
+			remoteInfo = OmeletBot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1056CCB71AC678BB00205BAF /* OmeletBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmeletBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1056CCBB1AC678BB00205BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1056CCBC1AC678BB00205BAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1056CCBD1AC678BB00205BAF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1056CCBF1AC678BB00205BAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1056CCC11AC678BB00205BAF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1056CCC21AC678BB00205BAF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1056CCC41AC678BB00205BAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1056CCC71AC678BC00205BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1056CCCD1AC678BC00205BAF /* OmeletBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmeletBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1056CCD21AC678BC00205BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1056CCD31AC678BC00205BAF /* OmeletBotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OmeletBotTests.m; sourceTree = "<group>"; };
+		1056CCDD1AC67BB400205BAF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		1056CCDE1AC67BB400205BAF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		1056CCE01AC67C6300205BAF /* OmeletOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmeletOrder.h; sourceTree = "<group>"; };
+		1056CCE11AC67C6300205BAF /* OmeletOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OmeletOrder.m; sourceTree = "<group>"; };
+		1056CCE31AC6816500205BAF /* NSMutableArray+Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Queue.h"; sourceTree = "<group>"; };
+		1056CCE41AC6816500205BAF /* NSMutableArray+Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Queue.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1056CCB41AC678BB00205BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1056CCCA1AC678BC00205BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1056CCAE1AC678BB00205BAF = {
+			isa = PBXGroup;
+			children = (
+				1056CCB91AC678BB00205BAF /* OmeletBot */,
+				1056CCD01AC678BC00205BAF /* OmeletBotTests */,
+				1056CCB81AC678BB00205BAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1056CCB81AC678BB00205BAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCB71AC678BB00205BAF /* OmeletBot.app */,
+				1056CCCD1AC678BC00205BAF /* OmeletBotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1056CCB91AC678BB00205BAF /* OmeletBot */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCE71AC6818D00205BAF /* Model */,
+				1056CCE61AC6816900205BAF /* Categories */,
+				1056CCBC1AC678BB00205BAF /* AppDelegate.h */,
+				1056CCBD1AC678BB00205BAF /* AppDelegate.m */,
+				1056CCC11AC678BB00205BAF /* ViewController.h */,
+				1056CCC21AC678BB00205BAF /* ViewController.m */,
+				1056CCC41AC678BB00205BAF /* Images.xcassets */,
+				1056CCC61AC678BC00205BAF /* Main.storyboard */,
+				1056CCBA1AC678BB00205BAF /* Supporting Files */,
+				1056CCDD1AC67BB400205BAF /* MainViewController.h */,
+				1056CCDE1AC67BB400205BAF /* MainViewController.m */,
+			);
+			path = OmeletBot;
+			sourceTree = "<group>";
+		};
+		1056CCBA1AC678BB00205BAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCBB1AC678BB00205BAF /* Info.plist */,
+				1056CCBF1AC678BB00205BAF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1056CCD01AC678BC00205BAF /* OmeletBotTests */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCD31AC678BC00205BAF /* OmeletBotTests.m */,
+				1056CCD11AC678BC00205BAF /* Supporting Files */,
+			);
+			path = OmeletBotTests;
+			sourceTree = "<group>";
+		};
+		1056CCD11AC678BC00205BAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCD21AC678BC00205BAF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1056CCE61AC6816900205BAF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCE31AC6816500205BAF /* NSMutableArray+Queue.h */,
+				1056CCE41AC6816500205BAF /* NSMutableArray+Queue.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		1056CCE71AC6818D00205BAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1056CCE01AC67C6300205BAF /* OmeletOrder.h */,
+				1056CCE11AC67C6300205BAF /* OmeletOrder.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1056CCB61AC678BB00205BAF /* OmeletBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1056CCD71AC678BC00205BAF /* Build configuration list for PBXNativeTarget "OmeletBot" */;
+			buildPhases = (
+				1056CCB31AC678BB00205BAF /* Sources */,
+				1056CCB41AC678BB00205BAF /* Frameworks */,
+				1056CCB51AC678BB00205BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OmeletBot;
+			productName = OmeletBot;
+			productReference = 1056CCB71AC678BB00205BAF /* OmeletBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1056CCCC1AC678BC00205BAF /* OmeletBotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1056CCDA1AC678BC00205BAF /* Build configuration list for PBXNativeTarget "OmeletBotTests" */;
+			buildPhases = (
+				1056CCC91AC678BC00205BAF /* Sources */,
+				1056CCCA1AC678BC00205BAF /* Frameworks */,
+				1056CCCB1AC678BC00205BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1056CCCF1AC678BC00205BAF /* PBXTargetDependency */,
+			);
+			name = OmeletBotTests;
+			productName = OmeletBotTests;
+			productReference = 1056CCCD1AC678BC00205BAF /* OmeletBotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1056CCAF1AC678BB00205BAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = ApesInSpace;
+				TargetAttributes = {
+					1056CCB61AC678BB00205BAF = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					1056CCCC1AC678BC00205BAF = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 1056CCB61AC678BB00205BAF;
+					};
+				};
+			};
+			buildConfigurationList = 1056CCB21AC678BB00205BAF /* Build configuration list for PBXProject "OmeletBot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1056CCAE1AC678BB00205BAF;
+			productRefGroup = 1056CCB81AC678BB00205BAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1056CCB61AC678BB00205BAF /* OmeletBot */,
+				1056CCCC1AC678BC00205BAF /* OmeletBotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1056CCB51AC678BB00205BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1056CCC51AC678BB00205BAF /* Images.xcassets in Resources */,
+				1056CCC81AC678BC00205BAF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1056CCCB1AC678BC00205BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1056CCB31AC678BB00205BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1056CCE21AC67C6300205BAF /* OmeletOrder.m in Sources */,
+				1056CCC31AC678BB00205BAF /* ViewController.m in Sources */,
+				1056CCC01AC678BB00205BAF /* main.m in Sources */,
+				1056CCBE1AC678BB00205BAF /* AppDelegate.m in Sources */,
+				1056CCDF1AC67BB400205BAF /* MainViewController.m in Sources */,
+				1056CCE51AC6816500205BAF /* NSMutableArray+Queue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1056CCC91AC678BC00205BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1056CCD41AC678BC00205BAF /* OmeletBotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1056CCCF1AC678BC00205BAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1056CCB61AC678BB00205BAF /* OmeletBot */;
+			targetProxy = 1056CCCE1AC678BC00205BAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1056CCC61AC678BC00205BAF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1056CCC71AC678BC00205BAF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1056CCD51AC678BC00205BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1056CCD61AC678BC00205BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1056CCD81AC678BC00205BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OmeletBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1056CCD91AC678BC00205BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OmeletBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1056CCDB1AC678BC00205BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OmeletBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OmeletBot.app/Contents/MacOS/OmeletBot";
+			};
+			name = Debug;
+		};
+		1056CCDC1AC678BC00205BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OmeletBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OmeletBot.app/Contents/MacOS/OmeletBot";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1056CCB21AC678BB00205BAF /* Build configuration list for PBXProject "OmeletBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1056CCD51AC678BC00205BAF /* Debug */,
+				1056CCD61AC678BC00205BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1056CCD71AC678BC00205BAF /* Build configuration list for PBXNativeTarget "OmeletBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1056CCD81AC678BC00205BAF /* Debug */,
+				1056CCD91AC678BC00205BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1056CCDA1AC678BC00205BAF /* Build configuration list for PBXNativeTarget "OmeletBotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1056CCDB1AC678BC00205BAF /* Debug */,
+				1056CCDC1AC678BC00205BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1056CCAF1AC678BB00205BAF /* Project object */;
+}
