@@ -35,9 +35,31 @@
     
     //Need to form the request
     // Tentative url request hostname:port/GRILL_POSITION/TOPPING_OPTION
-    NSString *grillPositionString = [self stringFromGrillPosition:_grillPosition];
-    NSString *toppingOptionString = [self stringFromToppingOption:_toppingOption];
-    NSString *urlString = [NSString stringWithFormat:@"%@:%@/%@/%@", HOSTNAME, PORT, grillPositionString, toppingOptionString];
+    NSString *grillPosition=@"";
+    if(BOTTOM_LEFT == _grillPosition){
+        grillPosition = @"1";
+    }
+    else if(BOTTOM_MIDDLE == _grillPosition){
+        grillPosition = @"2";
+    }
+    else if(BOTTOM_RIGHT == _grillPosition){
+        grillPosition = @"3";
+    }
+    else if(TOP_LEFT == _grillPosition){
+        grillPosition = @"4";
+    }
+    else if(TOP_MIDDLE == _grillPosition){
+        grillPosition = @"5";
+    }
+    else if(TOP_RIGHT == _grillPosition){
+        grillPosition = @"6";
+    }
+    
+    NSString *preTopping = (_toppingOption == DISPENSER_1 || _toppingOption == BOTH) ?@"true":@"false";
+    NSString *postTopping = (_toppingOption == DISPENSER_2 || _toppingOption == BOTH) ?@"true":@"false";
+    NSString *urlString = [NSString stringWithFormat:@"%@:%@/?grillPosition=%@&preTopping=%@&postTopping=%@&name=%@&number=%@", HOSTNAME, PORT, grillPosition, preTopping,postTopping, _name, _phoneNumber];
+    
+    
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:urlString]];
     
@@ -53,6 +75,7 @@
     
     else if ([response statusCode] == 200){
         //figure out if I'm in queue or not. Need to think about the timer logic.
+        NSLog(@"Successful request!");
     }
     
     return YES;

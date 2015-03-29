@@ -16,15 +16,15 @@ NSString *const BOTTOM_MIDDLE_STRING = @"BOTTOM_MIDDLE";
 NSString *const BOTTOM_RIGHT_STRING = @"BOTTOM_RIGHT";
 
 NSString *const PLAIN_STRING =  @"Plain";
-NSString *const DISPENSER_1_STRING =  @"Dispenser1";
-NSString *const DISPENSER_2_STRING = @"Dispenser2";
+NSString *const DISPENSER_1_STRING =  @"Peppers+Mushrooms";
+NSString *const DISPENSER_2_STRING = @"Tomatoes+Cheese";
 NSString *const BOTH_STRING = @"All Toppings";
 
 #pragma mark - HTTP Request arguments
 
 //TODO: Need to configure this!
-NSString *const HOSTNAME = @"http://localhost";
-NSString *const PORT = @"9090";
+NSString *const HOSTNAME = @"http://192.168.43.92";
+NSString *const PORT = @"3000";
 
 //TODO: Still need to configure this!
 NSString *const GRILL_LOCATION_STATE_KEY = @"location_state_key";

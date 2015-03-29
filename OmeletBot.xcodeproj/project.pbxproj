@@ -24,6 +24,8 @@
 		1056CCFE1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCFB1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png */; };
 		1056CCFF1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCFC1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png */; };
 		1056CD001AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCFD1AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png */; };
+		1056CD031AC80D4100205BAF /* NameAndNumberWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CD021AC80D4100205BAF /* NameAndNumberWindowController.m */; };
+		1056CD051AC80F6600205BAF /* NameAndNumberWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1056CD041AC80F6600205BAF /* NameAndNumberWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		1056CCFB1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrambled_egg_all_toppings_graphic.png; path = Resources/Images/scrambled_egg_all_toppings_graphic.png; sourceTree = "<group>"; };
 		1056CCFC1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrambled_egg_cheese_tomato_graphic.png; path = Resources/Images/scrambled_egg_cheese_tomato_graphic.png; sourceTree = "<group>"; };
 		1056CCFD1AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrambled_egg_mushroom_pepper_graphic.png; path = Resources/Images/scrambled_egg_mushroom_pepper_graphic.png; sourceTree = "<group>"; };
+		1056CD011AC80D4100205BAF /* NameAndNumberWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameAndNumberWindowController.h; sourceTree = "<group>"; };
+		1056CD021AC80D4100205BAF /* NameAndNumberWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameAndNumberWindowController.m; sourceTree = "<group>"; };
+		1056CD041AC80F6600205BAF /* NameAndNumberWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameAndNumberWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,9 @@
 				1056CCBA1AC678BB00205BAF /* Supporting Files */,
 				1056CCDD1AC67BB400205BAF /* MainViewController.h */,
 				1056CCDE1AC67BB400205BAF /* MainViewController.m */,
+				1056CD011AC80D4100205BAF /* NameAndNumberWindowController.h */,
+				1056CD021AC80D4100205BAF /* NameAndNumberWindowController.m */,
+				1056CD041AC80F6600205BAF /* NameAndNumberWindow.xib */,
 			);
 			path = OmeletBot;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1056CCFA1AC75FDE00205BAF /* egg_logo.png in Resources */,
+				1056CD051AC80F6600205BAF /* NameAndNumberWindow.xib in Resources */,
 				1056CCFE1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png in Resources */,
 				1056CCC51AC678BB00205BAF /* Images.xcassets in Resources */,
 				1056CCF01AC6E6AD00205BAF /* Chicken-Egg-256.png in Resources */,
@@ -298,6 +307,7 @@
 				1056CCE21AC67C6300205BAF /* OmeletOrder.m in Sources */,
 				1056CCC31AC678BB00205BAF /* ViewController.m in Sources */,
 				1056CCC01AC678BB00205BAF /* main.m in Sources */,
+				1056CD031AC80D4100205BAF /* NameAndNumberWindowController.m in Sources */,
 				1056CCBE1AC678BB00205BAF /* AppDelegate.m in Sources */,
 				1056CCDF1AC67BB400205BAF /* MainViewController.m in Sources */,
 				1056CCEE1AC6A2D400205BAF /* Constants.m in Sources */,

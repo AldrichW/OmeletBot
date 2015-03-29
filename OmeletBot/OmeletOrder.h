@@ -32,7 +32,10 @@ typedef enum{
 @property(nonatomic) ToppingOption toppingOption;
 @property(nonatomic) GrillPosition grillPosition;
 @property(nonatomic) BOOL inProgress;
+//Name of the person who ordered
+@property(nonatomic, strong) NSString *name;
 
+@property(nonatomic, strong) NSString *phoneNumber;
 //When an omelet order is inited, assume in progress.
 - (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption;
 - (OmeletOrder *)initWithGrillPosition:(GrillPosition)grillPosition;

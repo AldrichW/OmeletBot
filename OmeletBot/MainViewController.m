@@ -66,6 +66,8 @@
     [self setToReadyStateAtPosition:BOTTOM_LEFT];
     [self setToReadyStateAtPosition:BOTTOM_MIDDLE];
     [self setToReadyStateAtPosition:BOTTOM_RIGHT];
+    
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(pollOmeletBot) userInfo:nil repeats:YES];
 
 }
 
@@ -365,8 +367,11 @@
 }
 
 //Create a new order and add it to the queue.
-- (void)createOrderWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption{
+- (void)createOrderWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption name:(NSString *)name number:(NSString *)number{
     OmeletOrder *newOrder = [[OmeletOrder alloc]initWithGrillPosition:grillPosition toppingOption:toppingOption];
+    
+    [newOrder setPhoneNumber:number];
+    [newOrder setName:name];
     
     NSString *grillPositionString = [self stringFromGrillPosition:newOrder.grillPosition];
     NSString *toppingOptionString = [self stringFromToppingOption:toppingOption];
@@ -387,11 +392,11 @@
 
 - (BOOL)sendPing{
     NSMutableURLRequest *request;
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@:%@/?json=on",HOSTNAME,PORT]]];
     [request setHTTPMethod:@"GET"];
     
     NSHTTPURLResponse *response = nil;
     NSError *error = nil;
-    
     
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
@@ -411,10 +416,79 @@
                 return NO;
             }
             
-            [dictionary objectForKey:GRILL_LOCATION_STATE_KEY];
+            NSString *s1State = [dictionary objectForKey:@"S1"];
+            NSString *s2State = [dictionary objectForKey:@"S2"];
+            NSString *s3State = [dictionary objectForKey:@"S3"];
+            NSString *s4State = [dictionary objectForKey:@"S4"];
+            NSString *s5State = [dictionary objectForKey:@"S5"];
+            NSString *s6State = [dictionary objectForKey:@"S6"];
+            //Not recommended, really lazy coding. But I just want to see this work.
+            // numbering is like
+            //  3 2 1
+            //  6 5 4
+            
+            
+            if ([s1State isEqualToString: @"0"]){
+                [self setToReadyStateAtPosition:BOTTOM_LEFT];
+            }
+            else if ([s1State isEqualToString: @"1"]){
+                [self setToInProgressAtPosition:BOTTOM_LEFT];
+            }
+            else if ([s1State isEqualToString: @"2"]){
+                [self setToFoldAtPosition:BOTTOM_LEFT];
+            }
+            
+            if ([s2State isEqualToString: @"0"]){
+                [self setToReadyStateAtPosition:BOTTOM_MIDDLE];
+            }
+            else if ([s2State isEqualToString: @"1"]){
+                [self setToInProgressAtPosition:BOTTOM_MIDDLE];
+            }
+            else if ([s2State isEqualToString: @"2"]){
+                [self setToFoldAtPosition:BOTTOM_MIDDLE];
+            }
+            
+            if ([s3State isEqualToString: @"0"]){
+                [self setToReadyStateAtPosition:BOTTOM_RIGHT];
+            }
+            else if ([s3State isEqualToString: @"1"]){
+                [self setToInProgressAtPosition:BOTTOM_RIGHT];
+            }
+            else if ([s3State isEqualToString: @"2"]){
+                [self setToFoldAtPosition:BOTTOM_RIGHT];
+            }
+            
+            if ([s4State isEqualToString: @"0"]){
+                [self setToReadyStateAtPosition:TOP_LEFT];
+            }
+            else if ([s4State isEqualToString: @"1"]){
+                [self setToInProgressAtPosition:TOP_LEFT];
+            }
+            else if ([s4State isEqualToString: @"2"]){
+                [self setToFoldAtPosition:TOP_LEFT];
+            }
+            
+            if ([s5State isEqualToString: @"0"]){
+                [self setToReadyStateAtPosition:TOP_MIDDLE];
+            }
+            else if ([s5State isEqualToString: @"1"]){
+                [self setToInProgressAtPosition:TOP_MIDDLE];
+            }
+            else if ([s5State isEqualToString: @"2"]){
+                [self setToFoldAtPosition:TOP_MIDDLE];
+            }
+            
+            if ([s6State isEqualToString: @"0"]){
+                [self setToReadyStateAtPosition:TOP_RIGHT];
+            }
+            else if ([s6State isEqualToString: @"1"]){
+                [self setToInProgressAtPosition:TOP_RIGHT];
+            }
+            else if ([s6State isEqualToString: @"2"]){
+                [self setToFoldAtPosition:TOP_RIGHT];
+            }
             
             return YES;
-            
         }
     }
     return NO;
@@ -526,21 +600,31 @@
     NSPopUpButton *popupButton = (NSPopUpButton *)sender;
     NSString *topping = [[popupButton selectedItem]title];
     NSLog(@"The topping  chosen is %@",topping);
-    NSAlert *confirmationAlert = [[NSAlert alloc]init];
     
-    [confirmationAlert addButtonWithTitle:@"Confirm"];
-    [confirmationAlert addButtonWithTitle:@"Cancel"];
     
-    [confirmationAlert setMessageText:@"Are You Sure?"];
-    [confirmationAlert setInformativeText:@"Once you confirm your delicious omelette, it cannot be undone."];
-    if ([confirmationAlert runModal] == NSAlertFirstButtonReturn){
-        [self createOrderWithGrillPosition:(GrillPosition)popupButton.tag toppingOption:[self toppingOptionFromString:topping]];
-        
-        [self setToppingImageforTopping:[self toppingOptionFromString:topping] grillPosition:(GrillPosition)popupButton.tag];
-        
-        [self setToInProgressAtPosition:(GrillPosition)popupButton.tag];
-        
-    }
+    _windowController = [[NameAndNumberWindowController alloc]initWithWindowNibName:@"NameAndNumberWindow"];
+    [_windowController setDelegate:self];
+    _windowController.position =(GrillPosition)popupButton.tag;
+    _windowController.toppingOption =[self toppingOptionFromString:topping];
+    [_windowController showWindow:self];
+    
+    
+//    NSAlert *confirmationAlert = [[NSAlert alloc]init];
+//    
+//    [confirmationAlert addButtonWithTitle:@"Confirm"];
+//    [confirmationAlert addButtonWithTitle:@"Cancel"];
+//    
+//    
+//    [confirmationAlert setMessageText:@"Are You Sure?"];
+//    [confirmationAlert setInformativeText:@"Once you confirm your delicious omelette, it cannot be undone."];
+//    if ([confirmationAlert runModal] == NSAlertFirstButtonReturn){
+//        [self createOrderWithGrillPosition:(GrillPosition)popupButton.tag toppingOption:[self toppingOptionFromString:topping]];
+//        
+//        [self setToppingImageforTopping:[self toppingOptionFromString:topping] grillPosition:(GrillPosition)popupButton.tag];
+//        
+//        [self setToInProgressAtPosition:(GrillPosition)popupButton.tag];
+//        
+//    }
 }
 
 @end
