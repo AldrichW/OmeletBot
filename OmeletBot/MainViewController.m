@@ -273,6 +273,97 @@
     });
 }
 
+- (void)setToppingImageforTopping:(ToppingOption)toppingOption grillPosition:(GrillPosition)grillPosition{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        switch(grillPosition){
+            case TOP_LEFT:
+                if(toppingOption == PLAIN){
+                    [_topLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_1){
+                    [_topLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_mushroom_pepper_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_2){
+                    [_topLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_cheese_tomato_graphic.png"]];
+                }
+                else if(toppingOption == BOTH){
+                    [_topLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_all_toppings_graphic.png"]];
+                }
+                break;
+            case TOP_MIDDLE:
+                if(toppingOption == PLAIN){
+                    [_topMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_1){
+                    [_topMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_mushroom_pepper_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_2){
+                    [_topMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_cheese_tomato_graphic.png"]];
+                }
+                else if(toppingOption == BOTH){
+                    [_topMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_all_toppings_graphic.png"]];
+                }
+                break;
+            case TOP_RIGHT:
+                if(toppingOption == PLAIN){
+                    [_topRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_1){
+                    [_topRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_mushroom_pepper_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_2){
+                    [_topRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_cheese_tomato_graphic.png"]];
+                }
+                else if(toppingOption == BOTH){
+                    [_topRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_all_toppings_graphic.png"]];
+                }
+                break;
+            case BOTTOM_LEFT:
+                if(toppingOption == PLAIN){
+                    [_bottomLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_1){
+                    [_bottomLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_mushroom_pepper_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_2){
+                    [_bottomLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_cheese_tomato_graphic.png"]];
+                }
+                else if(toppingOption == BOTH){
+                    [_bottomLeftScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_all_toppings_graphic.png"]];
+                }
+                break;
+            case BOTTOM_MIDDLE:
+                if(toppingOption == PLAIN){
+                    [_bottomMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_1){
+                    [_bottomMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_mushroom_pepper_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_2){
+                    [_bottomMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_cheese_tomato_graphic.png"]];
+                }
+                else if(toppingOption == BOTH){
+                    [_bottomMiddleScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_all_toppings_graphic.png"]];
+                }
+                break;
+            case BOTTOM_RIGHT:
+                if(toppingOption == PLAIN){
+                    [_bottomRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_1){
+                    [_bottomRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_mushroom_pepper_graphic.png"]];
+                }
+                else if(toppingOption == DISPENSER_2){
+                    [_bottomRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_cheese_tomato_graphic.png"]];
+                }
+                else if(toppingOption == BOTH){
+                    [_bottomRightScrambledImage setImage:[NSImage imageNamed:@"scrambled_egg_all_toppings_graphic.png"]];
+                }
+                break;
+        };
+    });
+}
+
 //Create a new order and add it to the queue.
 - (void)createOrderWithGrillPosition:(GrillPosition)grillPosition toppingOption:(ToppingOption)toppingOption{
     OmeletOrder *newOrder = [[OmeletOrder alloc]initWithGrillPosition:grillPosition toppingOption:toppingOption];
@@ -444,6 +535,9 @@
     [confirmationAlert setInformativeText:@"Once you confirm your delicious omelette, it cannot be undone."];
     if ([confirmationAlert runModal] == NSAlertFirstButtonReturn){
         [self createOrderWithGrillPosition:(GrillPosition)popupButton.tag toppingOption:[self toppingOptionFromString:topping]];
+        
+        [self setToppingImageforTopping:[self toppingOptionFromString:topping] grillPosition:(GrillPosition)popupButton.tag];
+        
         [self setToInProgressAtPosition:(GrillPosition)popupButton.tag];
         
     }

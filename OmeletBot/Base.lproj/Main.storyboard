@@ -672,23 +672,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1123" height="920"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wha-bf-QVF">
-                                <rect key="frame" x="473" y="835" width="237" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="JLD-Hf-YlA"/>
-                                    <constraint firstAttribute="width" constant="233" id="Ziz-kf-1FB"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Omelette Bot" id="1r4-Qy-6yS">
-                                    <font key="font" size="29" name="Montserrat-Bold"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xpg-oS-DDe">
                                 <rect key="frame" x="95" y="163" width="992" height="620"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="620" id="Eqh-bd-ov9"/>
                                     <constraint firstAttribute="width" constant="992" id="G0K-3b-tog"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="620" id="LDL-M5-fEw"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="992" id="ZL6-Hy-p6e"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="grill_graphic" id="SxP-Vn-TXz"/>
                             </imageView>
@@ -907,6 +897,18 @@ DQ
                                     <action selector="grillButtonPressed:" target="XfG-lQ-9wD" id="754-rs-hhG"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xql-dl-6IH">
+                                <rect key="frame" x="531" y="468" width="169" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="Xxg-mL-49O"/>
+                                    <constraint firstAttribute="height" constant="33" id="ub7-uD-Zco"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Status Label" id="UHL-QW-5ZH">
+                                    <font key="font" size="18" name="OpenSans"/>
+                                    <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQ3-rU-3gf">
                                 <rect key="frame" x="754" y="468" width="169" height="33"/>
                                 <constraints>
@@ -967,18 +969,26 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xql-dl-6IH">
-                                <rect key="frame" x="531" y="468" width="169" height="33"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wha-bf-QVF">
+                                <rect key="frame" x="472" y="830" width="237" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="169" id="Xxg-mL-49O"/>
-                                    <constraint firstAttribute="height" constant="33" id="ub7-uD-Zco"/>
+                                    <constraint firstAttribute="height" constant="43" id="JLD-Hf-YlA"/>
+                                    <constraint firstAttribute="width" constant="233" id="Ziz-kf-1FB"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Status Label" id="UHL-QW-5ZH">
-                                    <font key="font" size="18" name="OpenSans"/>
-                                    <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="melette Bot" id="1r4-Qy-6yS">
+                                    <font key="font" size="32" name="Montserrat-Bold"/>
+                                    <color key="textColor" name="selectedKnobColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9g-Fj-Z7n">
+                                <rect key="frame" x="415" y="820" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="m2Z-FL-IiD"/>
+                                    <constraint firstAttribute="width" constant="69" id="zgI-p5-57j"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="egg_logo" id="lXP-eN-kJm"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Lmz-oT-8Ai" firstAttribute="top" secondItem="xpg-oS-DDe" secondAttribute="bottom" constant="-274" id="0Tt-qB-4ff"/>
@@ -1030,6 +1040,8 @@ DQ
                             <constraint firstAttribute="centerY" secondItem="xpg-oS-DDe" secondAttribute="centerY" constant="13" id="q0k-gg-azn"/>
                             <constraint firstItem="xpg-oS-DDe" firstAttribute="top" secondItem="rVU-iJ-hbA" secondAttribute="bottom" constant="-216" id="r7t-uw-Xfk"/>
                             <constraint firstItem="OQ3-rU-3gf" firstAttribute="centerX" secondItem="s3L-ef-oey" secondAttribute="centerX" constant="0.5" id="txb-kg-Pjk"/>
+                            <constraint firstItem="c9g-Fj-Z7n" firstAttribute="centerY" secondItem="wha-bf-QVF" secondAttribute="centerY" constant="-0.5" id="vKV-7C-noU"/>
+                            <constraint firstItem="wha-bf-QVF" firstAttribute="leading" secondItem="c9g-Fj-Z7n" secondAttribute="trailing" constant="-10" id="vgu-Lf-6Gu"/>
                             <constraint firstItem="75A-jw-dk4" firstAttribute="top" secondItem="Bo1-I6-rA2" secondAttribute="bottom" constant="8" id="woq-lG-19R"/>
                             <constraint firstItem="xpg-oS-DDe" firstAttribute="top" secondItem="pQD-6A-GpX" secondAttribute="bottom" constant="-216" id="xup-lW-9wd"/>
                             <constraint firstItem="xpg-oS-DDe" firstAttribute="top" secondItem="20k-f4-arH" secondAttribute="bottom" constant="-267" id="zCd-WR-N13"/>
@@ -1069,6 +1081,7 @@ DQ
     </scenes>
     <resources>
         <image name="Chicken-Egg-256" width="170" height="170"/>
+        <image name="egg_logo" width="256" height="256"/>
         <image name="grill_graphic" width="960" height="624"/>
         <image name="scrambled_egg_graphic" width="640" height="574"/>
     </resources>

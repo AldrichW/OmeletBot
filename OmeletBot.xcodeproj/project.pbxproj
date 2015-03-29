@@ -20,6 +20,10 @@
 		1056CCEE1AC6A2D400205BAF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056CCED1AC6A2D400205BAF /* Constants.m */; };
 		1056CCF01AC6E6AD00205BAF /* Chicken-Egg-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCEF1AC6E6AD00205BAF /* Chicken-Egg-256.png */; };
 		1056CCF51AC6FB7500205BAF /* scrambled_egg_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCF41AC6FB7500205BAF /* scrambled_egg_graphic.png */; };
+		1056CCFA1AC75FDE00205BAF /* egg_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCF91AC75FDE00205BAF /* egg_logo.png */; };
+		1056CCFE1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCFB1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png */; };
+		1056CCFF1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCFC1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png */; };
+		1056CD001AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png in Resources */ = {isa = PBXBuildFile; fileRef = 1056CCFD1AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		1056CCED1AC6A2D400205BAF /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		1056CCEF1AC6E6AD00205BAF /* Chicken-Egg-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Chicken-Egg-256.png"; path = "Resources/Images/Chicken-Egg-256.png"; sourceTree = "<group>"; };
 		1056CCF41AC6FB7500205BAF /* scrambled_egg_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrambled_egg_graphic.png; path = Resources/Images/scrambled_egg_graphic.png; sourceTree = "<group>"; };
+		1056CCF91AC75FDE00205BAF /* egg_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egg_logo.png; path = Resources/Images/egg_logo.png; sourceTree = "<group>"; };
+		1056CCFB1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrambled_egg_all_toppings_graphic.png; path = Resources/Images/scrambled_egg_all_toppings_graphic.png; sourceTree = "<group>"; };
+		1056CCFC1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrambled_egg_cheese_tomato_graphic.png; path = Resources/Images/scrambled_egg_cheese_tomato_graphic.png; sourceTree = "<group>"; };
+		1056CCFD1AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrambled_egg_mushroom_pepper_graphic.png; path = Resources/Images/scrambled_egg_mushroom_pepper_graphic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,10 @@
 		1056CCE91AC68A5C00205BAF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1056CCFB1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png */,
+				1056CCFC1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png */,
+				1056CCFD1AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png */,
+				1056CCF91AC75FDE00205BAF /* egg_logo.png */,
 				1056CCF41AC6FB7500205BAF /* scrambled_egg_graphic.png */,
 				1056CCEF1AC6E6AD00205BAF /* Chicken-Egg-256.png */,
 				1056CCEA1AC68A8900205BAF /* grill_graphic.png */,
@@ -257,9 +269,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1056CCFA1AC75FDE00205BAF /* egg_logo.png in Resources */,
+				1056CCFE1AC767B000205BAF /* scrambled_egg_all_toppings_graphic.png in Resources */,
 				1056CCC51AC678BB00205BAF /* Images.xcassets in Resources */,
 				1056CCF01AC6E6AD00205BAF /* Chicken-Egg-256.png in Resources */,
+				1056CD001AC767B000205BAF /* scrambled_egg_mushroom_pepper_graphic.png in Resources */,
 				1056CCC81AC678BC00205BAF /* Main.storyboard in Resources */,
+				1056CCFF1AC767B000205BAF /* scrambled_egg_cheese_tomato_graphic.png in Resources */,
 				1056CCEB1AC68A8900205BAF /* grill_graphic.png in Resources */,
 				1056CCF51AC6FB7500205BAF /* scrambled_egg_graphic.png in Resources */,
 			);
