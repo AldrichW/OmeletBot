@@ -59,8 +59,6 @@
     NSString *postTopping = (_toppingOption == DISPENSER_2 || _toppingOption == BOTH) ?@"true":@"false";
     NSString *urlString = [NSString stringWithFormat:@"%@:%@/?grillPosition=%@&preTopping=%@&postTopping=%@&name=%@&number=%@", HOSTNAME, PORT, grillPosition, preTopping,postTopping, _name, _phoneNumber];
     
-    
-    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:urlString]];
     
     [request setHTTPMethod:@"GET"];
